@@ -1,84 +1,138 @@
+Aqui está o **README único consolidado**, juntando tudo (Wine + ECT + versão profissional + estrutura de projeto + explicação completa), mantendo padrão de GitHub e bem organizado:
+
+---
+
 # 🧠 Self-Organizing Maps (SOM) para Visualização de Dados
 
 ## 📌 Descrição
 
-Este projeto aplica **Self-Organizing Maps (SOM)** para análise e visualização de dados multivariados.  
-O objetivo é reduzir a dimensionalidade dos dados e identificar padrões ocultos de forma não supervisionada.
+Este projeto aplica **Self-Organizing Maps (SOM)** para análise e visualização de dados multivariados, sendo uma técnica de **aprendizado não supervisionado** utilizada para redução de dimensionalidade e identificação de padrões ocultos.
 
-Para complementar a análise, foram utilizadas técnicas adicionais como PCA e KMeans, além de métricas de validação de clusters.
+O objetivo principal é transformar dados de alta dimensionalidade em uma representação bidimensional, preservando a estrutura topológica dos dados e permitindo a visualização de perfis e agrupamentos naturais.
+
+Foram realizados experimentos em dois cenários:
+
+* 🍷 **Wine Dataset (sklearn)** — validação clássica da técnica
+* 🎓 **Dados da ECT (notas acadêmicas)** — análise de perfis de estudantes
 
 ---
 
-## 🧠 Técnica Utilizada
+## 🎯 Objetivos
+
+* Reduzir a dimensionalidade de dados complexos
+* Identificar padrões e agrupamentos naturais
+* Visualizar perfis em espaço bidimensional
+* Comparar SOM com PCA
+* Refinar clusters com KMeans
+* Avaliar qualidade com Silhouette Score
+
+---
+
+## 🧠 Técnicas Utilizadas
 
 ### 🔹 Self-Organizing Map (SOM)
-Rede neural não supervisionada que projeta dados de alta dimensão em um espaço bidimensional preservando relações topológicas.
+
+Rede neural não supervisionada que projeta dados de alta dimensão em um mapa bidimensional preservando relações topológicas.
+
+### 🔹 KMeans Clustering
+
+Aplicado sobre os neurônios vencedores da SOM para refinar a separação dos clusters.
 
 ### 🔹 PCA (Análise de Componentes Principais)
-Utilizada para comparação de desempenho na redução de dimensionalidade.
 
-### 🔹 KMeans
-Aplicado sobre os neurônios vencedores da SOM para melhorar a separação dos clusters.
+Utilizado como baseline para comparação de redução de dimensionalidade.
+
+### 🔹 Normalização (MinMaxScaler)
+
+Essencial para o funcionamento correto da SOM.
+
+### 🔹 Silhouette Score
+
+Métrica utilizada para avaliar a qualidade dos clusters gerados.
 
 ---
 
 ## 🏗️ Arquitetura do Projeto
-SOM → Mapeamento dos dados
-↓
+
+```
+Dados (Wine / ECT)
+        ↓
+Normalização
+        ↓
+Self-Organizing Map (SOM)
+        ↓
 Neurônios vencedores
-↓
-KMeans (clustering final)
-↓
-Visualização + avaliação
+        ↓
+KMeans (Clustering final)
+        ↓
+PCA (comparação)
+        ↓
+Visualização + Avaliação
+```
 
 ---
 
-## 📊 Dataset
+## 📊 Datasets Utilizados
 
-- Wine Dataset (sklearn)
-- Características químicas de diferentes tipos de vinho
-- Problema de classificação multiclasse (não supervisionado neste projeto)
+### 🍷 Wine Dataset
+
+* Características químicas de diferentes tipos de vinho
+* Problema de classificação multiclasse
+
+### 🎓 ECT Dataset
+
+* Notas de disciplinas obrigatórias da Engenharia de Computação
+* Análise de desempenho acadêmico
+* Identificação de perfis de estudantes
 
 ---
 
 ## 📈 Resultados
 
-- Formação clara de clusters no mapa SOM
-- Boa separação visual entre classes
-- PCA usado como baseline comparativo
-- KMeans refinou os agrupamentos
+* Formação clara de clusters no mapa SOM
+* Identificação de padrões de comportamento nos dados
+* Boa separação visual entre grupos
+* PCA utilizado como comparação linear
+* KMeans melhorou a definição dos agrupamentos
+* Validação positiva com Silhouette Score
 
 ---
 
-## 📉 Métrica Utilizada
+## 📊 Visualizações Geradas
 
-- Silhouette Score para avaliação da qualidade dos clusters
-
----
-
-## 🖼️ Visualizações
-
-- U-Matrix (mapa de distâncias da SOM)
-- Clusters no mapa SOM
-- Projeção PCA para comparação
+* 🗺️ U-Matrix (mapa de distâncias da SOM)
+* 🎯 Clusters no espaço da SOM
+* 📉 Projeção PCA (comparação)
+* 📊 Distribuição de clusters
+* 🔍 Análise de perfis médios por cluster
 
 ---
 
-## 🚀 Tecnologias
+## 📉 Métrica de Avaliação
 
-- Python
-- MiniSom
-- Scikit-learn
-- Matplotlib
-- Seaborn
-- Pandas
-- NumPy
+* **Silhouette Score** para medir a qualidade dos agrupamentos gerados
+
+---
+
+## 🚀 Tecnologias Utilizadas
+
+* Python
+* MiniSom
+* Scikit-learn
+* Pandas
+* NumPy
+* Matplotlib
+* Seaborn
 
 ---
 
 ## 📌 Conclusão
 
-A combinação de SOM com técnicas de clustering e redução de dimensionalidade mostrou-se eficiente para análise exploratória de dados complexos, permitindo identificar padrões e estruturas ocultas nos dados.
+A combinação de Self-Organizing Maps com técnicas de clustering e redução de dimensionalidade demonstrou-se altamente eficaz para análise exploratória de dados complexos.
+
+A SOM foi capaz de preservar a estrutura topológica dos dados, permitindo a visualização de padrões ocultos tanto em dados clássicos (Wine) quanto em dados reais acadêmicos (ECT).
+
+A integração com KMeans e PCA proporcionou uma análise mais robusta e interpretável, tornando o modelo adequado para aplicações em segmentação, análise de desempenho e descoberta de padrões.
 
 ---
 
