@@ -1,0 +1,87 @@
+# 🧠 Self-Organizing Maps (SOM) para Visualização de Dados
+
+## 📌 Descrição
+
+Este projeto aplica **Self-Organizing Maps (SOM)** para análise e visualização de dados multivariados.  
+O objetivo é reduzir a dimensionalidade dos dados e identificar padrões ocultos de forma não supervisionada.
+
+Para complementar a análise, foram utilizadas técnicas adicionais como PCA e KMeans, além de métricas de validação de clusters.
+
+---
+
+## 🧠 Técnica Utilizada
+
+### 🔹 Self-Organizing Map (SOM)
+Rede neural não supervisionada que projeta dados de alta dimensão em um espaço bidimensional preservando relações topológicas.
+
+### 🔹 PCA (Análise de Componentes Principais)
+Utilizada para comparação de desempenho na redução de dimensionalidade.
+
+### 🔹 KMeans
+Aplicado sobre os neurônios vencedores da SOM para melhorar a separação dos clusters.
+
+---
+
+## 🏗️ Arquitetura do Projeto
+SOM → Mapeamento dos dados
+↓
+Neurônios vencedores
+↓
+KMeans (clustering final)
+↓
+Visualização + avaliação
+
+---
+
+## 📊 Dataset
+
+- Wine Dataset (sklearn)
+- Características químicas de diferentes tipos de vinho
+- Problema de classificação multiclasse (não supervisionado neste projeto)
+
+---
+
+## 📈 Resultados
+
+- Formação clara de clusters no mapa SOM
+- Boa separação visual entre classes
+- PCA usado como baseline comparativo
+- KMeans refinou os agrupamentos
+
+---
+
+## 📉 Métrica Utilizada
+
+- Silhouette Score para avaliação da qualidade dos clusters
+
+---
+
+## 🖼️ Visualizações
+
+- U-Matrix (mapa de distâncias da SOM)
+- Clusters no mapa SOM
+- Projeção PCA para comparação
+
+---
+
+## 🚀 Tecnologias
+
+- Python
+- MiniSom
+- Scikit-learn
+- Matplotlib
+- Seaborn
+- Pandas
+- NumPy
+
+---
+
+## 📌 Conclusão
+
+A combinação de SOM com técnicas de clustering e redução de dimensionalidade mostrou-se eficiente para análise exploratória de dados complexos, permitindo identificar padrões e estruturas ocultas nos dados.
+
+---
+
+## 👨‍💻 Autor
+
+Projeto desenvolvido para disciplina de **Aprendizado de Máquina**
