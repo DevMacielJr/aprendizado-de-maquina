@@ -1,0 +1,60 @@
+📊 PCA - Análise de Componentes Principais para Visualização de Dados
+📌 Descrição do Projeto
+
+Este projeto aplica a técnica de Análise de Componentes Principais (PCA) para redução de dimensionalidade e visualização de dados multivariados.
+
+O objetivo principal é transformar dados de alta dimensão em um espaço bidimensional, preservando o máximo possível da variância original, facilitando a análise exploratória e interpretação dos padrões presentes nos dados.
+
+O projeto foi desenvolvido utilizando a biblioteca scikit-learn.
+
+👨‍💻 Membros
+Edson Maciel Barros Junior - 20210010250
+🎯 Objetivos
+Aplicar normalização nos dados
+Reduzir dimensionalidade com PCA
+Projetar dados em 2 componentes principais
+Visualizar padrões e agrupamentos
+Interpretar a variância explicada
+📚 Base de Dados
+
+Foi utilizada uma base de dados disponível no scikit-learn:
+
+Iris Dataset ou Wine Dataset (dependendo da execução)
+Dados numéricos multivariados
+Problema de classificação supervisionada (usado aqui para visualização)
+⚙️ Etapas do Projeto
+1️⃣ Importação dos dados
+
+Carregamento da base de dados diretamente da biblioteca scikit-learn.
+
+2️⃣ Normalização
+
+Os dados foram normalizados utilizando StandardScaler, garantindo que todas as variáveis tenham a mesma escala.
+
+3️⃣ Aplicação do PCA
+
+Foi aplicada a técnica de PCA com 2 componentes principais, reduzindo a dimensionalidade dos dados.
+
+4️⃣ Visualização
+
+Os dados foram projetados em um espaço 2D e plotados para análise visual das classes.
+
+📊 Resultados
+Redução eficiente da dimensionalidade
+Preservação da variância dos dados
+Visualização clara da estrutura dos dados
+Identificação de agrupamentos naturais entre classes
+📈 Interpretação
+
+A projeção dos dados em duas dimensões permitiu observar padrões estruturais importantes, mostrando que mesmo após a redução, os dados mantêm separações relevantes entre classes.
+
+🧠 Conclusão
+
+O PCA se mostrou uma técnica eficiente para análise exploratória de dados, sendo útil para visualização, compressão de dados e identificação de padrões.
+
+🚀 Tecnologias Utilizadas
+Python 🐍
+NumPy
+Pandas
+Matplotlib
+scikit-learn
