@@ -116,13 +116,9 @@ for classe, cor in zip(df_pca['classe'].unique(), cores):
 
 plt.xlabel('Primeiro Componente Principal (PC1)')
 plt.ylabel('Segundo Componente Principal (PC2)')
-
 plt.title('Visualização da Base Iris usando PCA')
-
 plt.legend()
-
 plt.grid(True)
-
 plt.show()
 
 """## Conclusão
