@@ -1,0 +1,134 @@
+````markdown id="readme_final_nlp"
+# 🧠 Classificação de Texto com Machine Learning (NLP)
+
+## 📌 Visão Geral
+
+Este projeto implementa um sistema de **Classificação de Texto utilizando Machine Learning e Processamento de Linguagem Natural (NLP)**.
+
+O objetivo é treinar modelos capazes de identificar automaticamente se uma mensagem é **spam 🚨 ou não spam (ham) ✅**, utilizando técnicas clássicas de NLP.
+
+---
+
+## 📊 Dataset
+
+Foi utilizado o dataset:
+
+📌 **SMS Spam Collection Dataset**  
+🔗 https://www.kaggle.com/datasets/uciml/sms-spam-collection-dataset
+
+O dataset contém mensagens de texto rotuladas em duas classes:
+
+- **ham** → mensagens normais  
+- **spam** → mensagens indesejadas / promocionais  
+
+---
+
+## ⚙️ Tecnologias Utilizadas
+
+- Python 🐍  
+- Pandas  
+- NumPy  
+- Scikit-learn  
+- Matplotlib  
+- Seaborn  
+- WordCloud  
+- NLP (TF-IDF)
+
+---
+
+## 🧠 Pipeline do Projeto
+
+O fluxo do projeto segue as seguintes etapas:
+
+1. 📥 Carregamento do dataset  
+2. 🧹 Limpeza e pré-processamento de texto  
+3. 🔤 Vetorização com TF-IDF  
+4. ✂️ Divisão treino/teste  
+5. 🤖 Treinamento de modelos:
+   - Naive Bayes
+   - Logistic Regression  
+6. 📊 Avaliação de desempenho  
+7. 📉 Matriz de confusão  
+8. ☁️ Visualização com WordCloud  
+9. 🔍 Otimização com GridSearchCV  
+
+---
+
+## 📈 Resultados
+
+- O modelo **Logistic Regression** apresentou o melhor desempenho geral.
+- A acurácia atingiu aproximadamente **97%** no conjunto de teste.
+- A matriz de confusão mostrou alta capacidade de detecção de spam.
+- WordClouds evidenciaram padrões linguísticos diferentes entre classes.
+
+---
+
+## 📉 Visualizações
+
+O projeto inclui:
+
+- 📊 Matriz de confusão  
+- ☁️ WordCloud para spam  
+- ☁️ WordCloud para ham  
+
+---
+
+## 🔍 Modelos Testados
+
+| Modelo                 | Desempenho |
+|----------------------|------------|
+| Naive Bayes          | Bom        |
+| Logistic Regression  | Melhor     |
+
+---
+
+## 🚀 Como Executar o Projeto
+
+### 1. Clonar o repositório
+```bash
+git clone https://github.com/seu-usuario/classificacao-texto-nlp.git
+````
+
+### 2. Instalar dependências
+
+```bash
+pip install pandas numpy scikit-learn matplotlib seaborn wordcloud
+```
+
+### 3. Baixar o dataset
+
+* Acesse: [https://www.kaggle.com/datasets/uciml/sms-spam-collection-dataset](https://www.kaggle.com/datasets/uciml/sms-spam-collection-dataset)
+* Baixe o arquivo `spam.csv`
+
+### 4. Executar o notebook
+
+Abra o Colab ou Jupyter Notebook e execute todas as células.
+
+---
+
+## 📌 Estrutura do Projeto
+
+```
+📁 classificacao-texto-nlp
+ ┣ 📄 notebook.ipynb
+ ┣ 📄 spam.csv
+ ┣ 📄 README.md
+```
+
+---
+
+## 🧠 Possíveis Melhorias
+
+* Implementação de modelos Deep Learning (LSTM, BERT)
+* Deploy com Streamlit ou Flask
+* Uso de embeddings (Word2Vec / GloVe)
+* Expansão para múltiplas classes de texto
+
+---
+
+## 👥 Autores
+
+Edson Maciel e Barros Junior
+
+Só fala: **“quero nível profissional máximo”** 👍
+```
