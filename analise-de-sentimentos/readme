@@ -1,0 +1,151 @@
+# 😀 Análise de Sentimentos com Google Translate + VADER
+
+Projeto de análise de sentimentos utilizando tradução automática do português para o inglês com Google Translate e classificação de sentimentos com VADER.
+
+---
+
+## 📌 Descrição
+
+Este projeto tem como objetivo realizar análise de sentimentos em textos escritos em português.
+
+Como o analisador VADER possui melhor desempenho para textos em inglês, foi utilizada a biblioteca `googletrans` para traduzir automaticamente os textos antes da análise.
+
+O sistema identifica sentimentos positivos, negativos e neutros em frases e avaliações.
+
+---
+
+## 🚀 Tecnologias Utilizadas
+
+- Python
+- Pandas
+- NLTK
+- VADER
+- Google Translate (`googletrans`)
+
+---
+
+## 📦 Instalação
+
+Instale as dependências:
+
+```bash
+pip install googletrans==4.0.0-rc1
+pip install pandas
+pip install nltk
+```
+
+---
+
+## 📊 Dataset Utilizado
+
+Restaurant Reviews Dataset:
+
+```text
+https://raw.githubusercontent.com/ect-info/ml/master/dados/Restaurant_Reviews.tsv
+```
+
+---
+
+## ⚙️ Funcionamento
+
+O projeto realiza:
+
+1. Carregamento do dataset
+2. Tradução automática do português para inglês
+3. Análise de sentimentos com VADER
+4. Exibição dos resultados
+
+---
+
+## 📝 Exemplos
+
+### Exemplo Negativo
+
+Texto original:
+
+```text
+Não é um bom aplicativo
+```
+
+Tradução:
+
+```text
+It's not a good app
+```
+
+---
+
+### Exemplo Positivo
+
+Texto original:
+
+```text
+Eu gostei do aplicativo
+```
+
+Tradução:
+
+```text
+I liked the app
+```
+
+---
+
+## 😀 Tipos de Sentimento
+
+O VADER retorna:
+
+- `neg` → sentimento negativo
+- `neu` → sentimento neutro
+- `pos` → sentimento positivo
+- `compound` → score geral do sentimento
+
+---
+
+## ▶️ Como Executar
+
+Clone o repositório:
+
+```bash
+git clone https://github.com/seu-usuario/seu-repositorio.git
+```
+
+Entre na pasta do projeto:
+
+```bash
+cd analise-de-sentimentos
+```
+
+Execute o arquivo:
+
+```bash
+python analise_de_sentimentos.py
+```
+
+ou:
+
+```bash
+py analise_de_sentimentos.py
+```
+
+---
+
+## 📈 Resultados
+
+O sistema conseguiu identificar corretamente sentimentos positivos e negativos após a tradução automática dos textos.
+
+A utilização do Google Translate permitiu adaptar frases em português para análise eficiente utilizando o VADER.
+
+---
+
+## 🎯 Conclusão
+
+Este projeto demonstrou a integração entre tradução automática e análise de sentimentos utilizando Python.
+
+A solução permite analisar textos em português aproveitando modelos de NLP otimizados para inglês.
+
+---
+
+## 👨‍💻 Autor
+
+Edson Junior
