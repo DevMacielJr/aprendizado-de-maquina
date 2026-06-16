@@ -1,0 +1,252 @@
+# PreEpi: Aplicação de Técnicas de Machine Learning e Análise de Sobrevivência para Predição de Mortalidade Neonatal em Prematuros
+
+## 1. Introdução
+
+### 1.1 Identificação
+
+**Integrantes**
+
+* Nome Completo – Matrícula
+* Nome Completo – Matrícula
+
+**Vídeo de apresentação**
+
+Link: inserir URL do vídeo (caso aplicável).
+
+### 1.2 Informações Gerais
+
+#### Problema
+
+A mortalidade neonatal associada à prematuridade representa um importante desafio para os sistemas de saúde em todo o mundo. A identificação precoce de fatores de risco pode auxiliar profissionais da saúde na tomada de decisões clínicas e no direcionamento de recursos para pacientes com maior probabilidade de evolução desfavorável.
+
+Neste trabalho foi desenvolvido um sistema de análise epidemiológica, aprendizado de máquina e análise de sobrevivência para investigar fatores associados ao óbito neonatal em recém-nascidos prematuros.
+
+#### Algoritmos Utilizados
+
+Foram utilizados algoritmos supervisionados, não supervisionados e de análise de sobrevivência:
+
+* PCA (Principal Component Analysis)
+* K-Means
+* Regressão Logística
+* Árvore de Decisão
+* Support Vector Machine (SVM)
+* Multilayer Perceptron (MLP)
+* Kaplan-Meier
+* Modelo de Cox Proportional Hazards
+* Random Survival Forest
+
+#### Objetivos
+
+Objetivo geral:
+
+Desenvolver modelos capazes de analisar fatores clínicos relacionados à mortalidade neonatal em prematuros.
+
+Objetivos específicos:
+
+* Realizar análise exploratória dos dados.
+* Investigar a influência de variáveis clínicas sobre o risco de óbito.
+* Comparar diferentes algoritmos de Machine Learning.
+* Aplicar técnicas de análise de sobrevivência.
+* Avaliar o desempenho dos modelos através de métricas estatísticas.
+
+#### Base de Dados
+
+Foi utilizada uma base de dados contendo informações de recém-nascidos prematuros entre os anos de 2014 e 2022.
+
+As principais variáveis analisadas foram:
+
+* IDADEMAE
+* PESO
+* SEMAGESTAC
+* APGAR1
+* APGAR5
+* REGIAO
+* Obito
+
+A base foi previamente tratada para remoção de inconsistências, imputação de valores ausentes e adequação para os modelos de aprendizado de máquina.
+
+## 2. Metodologia
+
+### 2.1 Análise Exploratória dos Dados (EDA)
+
+Inicialmente foram realizadas análises descritivas para compreender a distribuição dos dados.
+
+As análises incluíram:
+
+* Distribuição do desfecho (óbito/sobrevivência)
+* Distribuição do peso ao nascer
+* Mortalidade por faixa de peso
+* Mortalidade por raça/cor
+* Distribuição dos escores de Apgar
+* Tendência temporal da mortalidade
+* Matriz de correlação entre variáveis
+
+### 2.2 Análise de Sobrevivência
+
+A análise de sobrevivência foi aplicada para estudar o tempo até ocorrência do óbito neonatal.
+
+#### Kaplan-Meier
+
+Utilizado para estimar a probabilidade de sobrevivência ao longo do tempo.
+
+Foram avaliados grupos de:
+
+* Peso ao nascer
+* Idade gestacional
+* Região geográfica
+
+#### Log-Rank Test
+
+Utilizado para comparar estatisticamente as curvas de sobrevivência entre grupos.
+
+#### Cox Proportional Hazards
+
+Empregado para estimar o efeito das variáveis clínicas sobre o risco de óbito.
+
+A interpretação foi realizada através dos Hazard Ratios.
+
+#### Random Survival Forest
+
+Método baseado em árvores de decisão para modelagem de sobrevivência não linear.
+
+O desempenho foi avaliado através do Concordance Index (C-index).
+
+### 2.3 Redução de Dimensionalidade
+
+Foi aplicado PCA (Principal Component Analysis) com o objetivo de reduzir a dimensionalidade dos dados e facilitar a visualização de padrões entre pacientes sobreviventes e não sobreviventes.
+
+### 2.4 Agrupamento
+
+Foi utilizado o algoritmo K-Means para identificar perfis clínicos semelhantes entre os prematuros.
+
+A qualidade dos agrupamentos foi avaliada por meio do Silhouette Score.
+
+### 2.5 Modelos de Classificação
+
+Foram treinados modelos supervisionados para prever o desfecho de óbito neonatal.
+
+Os algoritmos utilizados foram:
+
+* Regressão Logística
+* Árvore de Decisão
+* SVM
+* MLP
+
+### 2.6 Treinamento e Teste
+
+Os dados foram divididos em:
+
+* 80% para treinamento
+* 20% para teste
+
+A divisão foi realizada utilizando estratificação da variável alvo para preservar a proporção entre classes.
+
+As variáveis numéricas foram padronizadas utilizando StandardScaler quando necessário.
+
+### 2.7 Seleção de Atributos
+
+Foram selecionadas variáveis amplamente reconhecidas na literatura como fatores de risco para mortalidade neonatal:
+
+* Peso ao nascer
+* Idade gestacional
+* Idade materna
+* Apgar no 1º minuto
+* Apgar no 5º minuto
+
+Essas variáveis apresentam relevância clínica e disponibilidade consistente na base de dados.
+
+## 3. Códigos
+
+### Trechos Principais
+
+Preparação dos dados:
+
+```python
+X = df_surv[features_ml]
+y = df_surv['evento']
+```
+
+Treinamento da Regressão Logística:
+
+```python
+lr.fit(X_train_scaled, y_train)
+```
+
+Treinamento da Árvore de Decisão:
+
+```python
+tree.fit(X_train, y_train)
+```
+
+Treinamento da SVM:
+
+```python
+svm.fit(X_train_scaled, y_train)
+```
+
+Treinamento da MLP:
+
+```python
+mlp.fit(X_train_scaled, y_train)
+```
+
+Random Survival Forest:
+
+```python
+rsf.fit(X_train_surv, y_train_surv)
+```
+
+### Repositório
+
+Inserir link do GitHub contendo notebook e código-fonte.
+
+## 4. Experimentos
+
+### Testes Executados
+
+Foram realizados experimentos utilizando:
+
+* PCA
+* K-Means
+* Regressão Logística
+* Árvore de Decisão
+* SVM
+* MLP
+* Cox PH
+* Random Survival Forest
+
+### Parâmetros Avaliados
+
+Modelos de classificação:
+
+* Accuracy
+* Precision
+* Recall
+* F1-score
+* ROC-AUC
+
+Modelos de sobrevivência:
+
+* Concordance Index (C-index)
+
+Agrupamento:
+
+* Silhouette Score
+
+### Resultados
+
+Os resultados foram comparados por meio de tabelas e gráficos.
+
+Foram avaliadas diferenças de desempenho entre os modelos clássicos de Machine Learning e os modelos específicos de análise de sobrevivência.
+
+A interpretação dos resultados considerou tanto o desempenho estatístico quanto a relevância clínica das variáveis identificadas.
+
+## 5. Conclusão
+
+Os objetivos propostos foram atingidos, permitindo a aplicação integrada de técnicas de aprendizado de máquina, análise de sobrevivência e análise exploratória em uma base de dados de prematuros.
+
+Os modelos permitiram identificar fatores relevantes associados ao risco de mortalidade neonatal, destacando principalmente o peso ao nascer, a idade gestacional e os escores de Apgar.
+
+Além disso, a comparação entre diferentes algoritmos forneceu uma visão abrangente sobre o desempenho de métodos supervisionados, não supervisionados e modelos específicos para análise de sobrevivência.
+
+Como trabalhos futuros, recomenda-se a inclusão de novas variáveis clínicas e socioeconômicas, bem como a utilização de técnicas avançadas de interpretação de modelos e validação externa.
